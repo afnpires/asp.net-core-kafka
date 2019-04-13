@@ -18,6 +18,7 @@
         public static void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddHostedService<KafkaHostedConsumer>();
         }
 
         public static void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -34,8 +35,6 @@
 
             app.UseHttpsRedirection();
             app.UseMvc();
-
-            new KafkaConsumer().MyConsume();
         }
     }
 }
