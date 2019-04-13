@@ -34,6 +34,8 @@
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            new KafkaConsumer().MyConsume();
         }
     }
 }
